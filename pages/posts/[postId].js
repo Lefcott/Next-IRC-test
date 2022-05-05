@@ -14,7 +14,7 @@ const Post = ({ post }) => {
 export async function getStaticProps() {
   const post = Math.floor(Math.random() * 1000);
 
-  await sleep(10000);
+  await sleep(40000);
 
   return {
     props: {
