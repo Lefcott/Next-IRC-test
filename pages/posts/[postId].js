@@ -42,6 +42,10 @@ export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts
   const paths = [{ params: { postId: "1" } }];
 
+  fetch(
+    `https://3622-2800-810-487-5e7-6946-e48b-7dcf-a038.ngrok.io/getPaths`
+  ).catch(console.log);
+
   // We'll pre-render only these paths at build time.
   // { fallback: blocking } will server-render pages
   // on-demand if the path doesn't exist.
