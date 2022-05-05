@@ -1,3 +1,5 @@
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const Post = ({ post }) => {
   return (
     <ul>
@@ -11,6 +13,8 @@ const Post = ({ post }) => {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const post = Math.floor(Math.random() * 1000);
+
+  await sleep(10000);
 
   return {
     props: {
@@ -29,9 +33,9 @@ export async function getStaticProps() {
 export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts
   const paths = [
-    { params: { postId: '1' } },
-    { params: { postId: '2' } },
-    { params: { postId: '3' } },
+    { params: { postId: "1" } },
+    { params: { postId: "2" } },
+    { params: { postId: "3" } },
   ];
 
   // We'll pre-render only these paths at build time.
