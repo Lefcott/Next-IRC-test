@@ -18,7 +18,7 @@ export async function getStaticProps() {
     `https://3622-2800-810-487-5e7-6946-e48b-7dcf-a038.ngrok.io/post/${post}/start`
   ).catch(console.log);
 
-  await sleep(5000);
+  await sleep(10000);
 
   fetch(
     `https://3622-2800-810-487-5e7-6946-e48b-7dcf-a038.ngrok.io/post/${post}/end`
