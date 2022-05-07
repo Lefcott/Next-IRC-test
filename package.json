@@ -1,5 +1,5 @@
 {
-  "name": "next-isr-test",
+  "name": "nextjs-typescript-monorepo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,11 +14,15 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
     "colors": "^1.4.0",
     "dotenv": "^16.0.0",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "typescript": "^4.6.4",
     "vercel": "^24.2.0"
   }
 }
