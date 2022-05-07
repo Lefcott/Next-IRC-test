@@ -30,3 +30,6 @@ yarn-error.log*
 
 # package.json inside projects
 /src/projects/*/package.json
+
+# vercel
+.vercel

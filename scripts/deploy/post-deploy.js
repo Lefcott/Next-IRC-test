@@ -1,7 +1,11 @@
-const { projectName } = require('./values');
+const { projectName } = require("./values");
 
-const postDeploy = () => {
-  console.log(`Deployed ${projectName} successfully!`.green);
+const postDeploy = (success) => {
+  if (success) {
+    console.log(`Deployed ${projectName} successfully!`.green);
+  } else {
+    console.log("Deployment failed".red);
+  }
 };
 
 module.exports = {
