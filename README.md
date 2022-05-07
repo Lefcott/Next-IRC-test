@@ -1,4 +1,4 @@
-# NextJs Monorepo
+# NextJs Typescript Monorepo
 
 ### Installing the dependencies
 
