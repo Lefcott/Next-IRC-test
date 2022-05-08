@@ -40,11 +40,11 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "eslint . --fix"
+      "eslint --fix"
     ],
     "*.tsx": [
       "prettier --write",
-      "eslint . --fix"
+      "eslint --fix"
     ]
   }
 }
