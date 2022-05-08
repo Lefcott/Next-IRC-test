@@ -23,9 +23,6 @@ const nextConfig = {
   experimental: {
     externalDir: true,
   },
-  typescript: {
-    tsconfigPath: path.join("../../..", "tsconfig.json"),
-  },
   env: { ...env },
 };
 

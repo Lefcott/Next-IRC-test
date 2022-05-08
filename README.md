@@ -39,3 +39,17 @@ yarn start <project-name>
 # or
 npm start <project-name>
 ```
+
+### Importing modules
+
+- From outside the current project
+
+```ts
+import Test from "src/components/Test";
+```
+
+- From inside the current project
+
+```ts
+import Test from "@/components/Test";
+```
