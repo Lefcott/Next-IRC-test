@@ -3,8 +3,6 @@ import Head from 'next/head';
 import Test from 'src/components/Test';
 import Test2 from '@/components/Test';
 
-notdefinedvariableeeeee;
-
 const Home: NextPage = () => {
   return (
     <div className="px-8 py-0">
