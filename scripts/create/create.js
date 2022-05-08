@@ -2,7 +2,8 @@ const fs = require("fs");
 const ncp = require("ncp");
 const path = require("path");
 const inquirer = require("inquirer");
-const { projectName } = require("./values");
+const { createTsConfig } = require("../common/createTsConfig");
+const { projectName, projectPath } = require("./values");
 const { postCreate } = require("./post-create");
 
 const templates = fs
@@ -20,14 +21,11 @@ inquirer
       fs.mkdirSync("src/projects");
     }
 
-    ncp(
-      path.join("src/templates", template),
-      path.join("src/projects", projectName),
-      (err) => {
-        if (err) throw new Error(err);
-        postCreate(projectName);
-      }
-    );
+    ncp(path.join("src/templates", template), projectPath, (err) => {
+      if (err) throw new Error(err);
+      createTsConfig(projectPath);
+      postCreate(projectName);
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
