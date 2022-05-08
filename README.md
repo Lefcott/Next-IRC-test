@@ -40,6 +40,22 @@ yarn start <project-name>
 npm start <project-name>
 ```
 
+### Creating a new project
+
+```bash
+yarn new <project-name>
+# or
+npm run new <project-name>
+```
+
+### Running a project template
+
+```bash
+yarn run-template <template-name>
+# or
+npm run run-template <template-name>
+```
+
 ### Importing modules
 
 - From outside the current project
