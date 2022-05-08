@@ -25,8 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
-.env*.local
+# local env file
+/.env
 
 # package.json inside projects
 /src/projects/*/package.json

@@ -5,7 +5,7 @@ const { answers } = require("./values");
 
 let retrying = false;
 
-dotenv.config({ path: ".env.local" });
+dotenv.config();
 
 const deploy = () => {
   const vercel = spawn("vercel", [

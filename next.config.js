@@ -1,4 +1,6 @@
-const path = require("path");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const deleteKeys = (env) =>
   Object.entries(env).forEach(([key]) => {
