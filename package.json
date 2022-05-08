@@ -8,7 +8,8 @@
     "deploy": "node scripts/deploy",
     "build": "node scripts/build",
     "start": "node scripts/start",
-    "run-template": "node scripts/dev template"
+    "run-template": "node scripts/dev template",
+    "prepare": "husky install"
   },
   "dependencies": {
     "inquirer": "^8.2.4",
