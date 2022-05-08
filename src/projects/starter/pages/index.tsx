@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Test from 'src/components/Test';
 import Test2 from '@/components/Test';
 
-notdefinedvariableee;
+notdefinedvariableeeee;
 
 const Home: NextPage = () => {
   return (
