@@ -16,6 +16,10 @@ inquirer
   .then((answers) => {
     const { template } = answers;
 
+    if (!fs.existsSync("src/projects")) {
+      fs.mkdirSync("src/projects");
+    }
+
     ncp(
       path.join("src/templates", template),
       path.join("src/projects", projectName),
