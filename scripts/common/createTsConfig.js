@@ -2,9 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const tsconfig = require("../../tsconfig.base.json");
 
-const createTsConfig = (projectName) => {
-  const projectPath = `src/projects/${projectName}`;
-
+const createTsConfig = (projectPath) => {
   if (!tsconfig.compilerOptions.paths) {
     tsconfig.compilerOptions.paths = {};
   }

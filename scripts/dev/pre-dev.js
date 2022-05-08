@@ -1,4 +1,4 @@
-const { projectName } = require("./values");
+const { projectPath } = require("./values");
 const { createTsConfig } = require("../common/createTsConfig");
 
-createTsConfig(projectName);
+createTsConfig(projectPath);

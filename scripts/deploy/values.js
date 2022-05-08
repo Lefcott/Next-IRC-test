@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validateValues } = require("../common/validateValues");
 
 const [, , projectName] = process.argv;
 
@@ -90,6 +91,8 @@ const answers = [
     attemped: false,
   },
 ];
+
+validateValues(null, projectName, projectPath);
 
 module.exports = {
   projectName,

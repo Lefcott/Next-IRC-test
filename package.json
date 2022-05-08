@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/dev",
+    "dev": "node scripts/dev project",
     "deploy": "node scripts/deploy",
     "build": "node scripts/build",
-    "start": "node scripts/start"
+    "start": "node scripts/start",
+    "run-template": "node scripts/dev template"
   },
   "dependencies": {
     "next": "12.1.6",
