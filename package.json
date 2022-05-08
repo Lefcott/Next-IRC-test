@@ -36,6 +36,7 @@
     "vercel": "^24.2.0"
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": "eslint --cache --fix",
+    "*.tsx": "eslint --cache --fix"
   }
 }
