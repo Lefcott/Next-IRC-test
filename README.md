@@ -16,12 +16,14 @@ npm run dev <project-name>
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Deploying a project on Vercel
+### Deploying a project to Vercel
 
 ```bash
-yarn deploy <project-name>
+yarn deploy-dev <project-name>
+yarn deploy-prod <project-name>
 # or
-npm run deploy <project-name>
+npm run deploy-dev <project-name>
+npm run deploy-prod <project-name>
 ```
 
 ### Building a project
@@ -61,11 +63,11 @@ npm run run-template <template-name>
 - From outside the current project
 
 ```ts
-import Test from "src/components/Test";
+import Test from 'src/components/Test';
 ```
 
 - From inside the current project
 
 ```ts
-import Test from "@/components/Test";
+import Test from '@/components/Test';
 ```

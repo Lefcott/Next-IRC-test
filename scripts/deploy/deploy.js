@@ -1,32 +1,32 @@
-const { spawn } = require("child_process");
-const dotenv = require("dotenv");
-const { postDeploy } = require("./post-deploy");
-const { answers } = require("./values");
+const { spawn } = require('child_process');
+const dotenv = require('dotenv');
+const { postDeploy } = require('./post-deploy');
+const { answers, envrionment } = require('./values');
 
 let retrying = false;
 
 dotenv.config();
 
 const deploy = () => {
-  const vercel = spawn("vercel", [
-    "deploy",
-    ".",
-    "--prod",
-    "--no-clipboard",
-    "--token",
+  const vercel = spawn('vercel', [
+    'deploy',
+    '.',
+    ...(envrionment === 'production' ? ['--prod'] : []),
+    '--no-clipboard',
+    '--token',
     process.env.VERCEL_TOKEN,
   ]);
 
   const retry = () => {
     retrying = true;
-    vercel.stdout.off("data", onData);
-    vercel.stderr.off("data", onStdErr);
+    vercel.stdout.off('data', onData);
+    vercel.stderr.off('data', onStdErr);
     vercel.stdin.end();
     let killed = false;
     while (!killed) {
-      killed = vercel.kill("SIGKILL");
+      killed = vercel.kill('SIGKILL');
       if (killed) {
-        console.log("Terminated the previous vercel process".cyan);
+        console.log('Terminated the previous vercel process'.cyan);
       }
     }
 
@@ -40,7 +40,7 @@ const deploy = () => {
   vercel.stderr.pipe(process.stderr);
 
   const onData = (data) => {
-    const strData = data.toString("utf8");
+    const strData = data.toString('utf8');
 
     answers.forEach((answer) => {
       if (!answer.attemped && strData.includes(answer.question)) {
@@ -54,7 +54,7 @@ const deploy = () => {
   };
 
   const onStdErr = (data) => {
-    const strData = data.toString("utf8");
+    const strData = data.toString('utf8');
 
     answers.forEach((answer) => {
       if (!answer.attemped && strData.includes(answer.question)) {
@@ -66,10 +66,10 @@ const deploy = () => {
     });
   };
 
-  vercel.stdout.on("data", onData);
-  vercel.stderr.on("data", onStdErr);
+  vercel.stdout.on('data', onData);
+  vercel.stderr.on('data', onStdErr);
 
-  vercel.on("exit", (code) => {
+  vercel.on('exit', (code) => {
     if (retrying) {
       retrying = false;
       return;

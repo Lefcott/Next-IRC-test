@@ -5,7 +5,8 @@
   "scripts": {
     "new": "node scripts/create",
     "dev": "node scripts/dev project",
-    "deploy": "node scripts/deploy",
+    "deploy-dev": "node scripts/deploy development",
+    "deploy-prod": "node scripts/deploy production",
     "build": "node scripts/build",
     "start": "node scripts/start",
     "run-template": "node scripts/dev template",
